@@ -1,4 +1,4 @@
-//12main6_2
+//12main7_2
 // Самостоятельная работа
 //Циклы for,while,do while,forEatch,for in
 
