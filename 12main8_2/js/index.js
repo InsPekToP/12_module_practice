@@ -13,3 +13,28 @@
 //массива будет увеличен на 2, и выведите его в консоль.
 
 // Используя метод reduce, вычислите сумму всех элементов исходного массива и выведите результат в консоль.
+
+
+let arr = [1,2,3,4,5,6,7,8,9,10];
+console.log("Первоначальный массив: " + arr);
+
+arr.forEach(function(i){
+    console.log("Элемент: " + i)
+});
+
+
+let newArr = arr.filter(function(el){
+    return el%2==0;
+});
+console.log("Четный массив: " + newArr);
+
+let newArr2 = arr.map(function(el){
+    return el*2;
+});
+
+console.log("Эл-ты умноженные на 2: " + newArr2);
+
+let summa = arr.reduce(function(sum,el){
+    return sum + el;
+});
+console.log("Сумма всех эл-тов: " + summa);
