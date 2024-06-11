@@ -40,3 +40,39 @@ client.withdraw(1500);
 client.withdraw(1500);
 
 console.log(client.balance);
+
+//Ответ с задания
+
+// Задание: Управление банковским счетом
+
+// 1. Создайте класс BankAccount с конструктором, принимающим параметры accountHolder и balance.
+class BankAccount {
+  constructor(accountHolder, balance) {
+    this.accountHolder = accountHolder;
+    this.balance = balance;
+  }
+
+  // 2. Добавьте метод deposit(amount), который увеличивает баланс счета на указанную сумму.
+  deposit(amount) {
+    this.balance += amount;
+    console.log(`Пополнение на ${amount} успешно. Новый баланс: ${this.balance}`);
+  }
+
+  // 3. Добавьте метод withdraw(amount), который уменьшает баланс счета на указанную сумму, если на счете достаточно средств.
+  withdraw(amount) {
+    if (amount <= this.balance) {
+      this.balance -= amount;
+      console.log(`Снятие ${amount} успешно. Новый баланс: ${this.balance}`);
+    } else {
+      console.log(`Ошибка: Недостаточно средств на счете.`);
+    }
+  }
+}
+
+// 4. Создайте экземпляр класса BankAccount с именем "John" и начальным балансом 1000.
+var johnAccount = new BankAccount('John', 1000);
+
+// 5. Выполните несколько операций пополнения и снятия средств, а затем выведите в консоль текущий баланс счета.
+johnAccount.deposit(500);
+johnAccount.withdraw(200);
+johnAccount.withdraw(1200); // Попытка снять больше, чем есть на счете.
